@@ -25,3 +25,50 @@ body{background:var(--ground)}
 @media(max-width:860px){.nav{background:#030409fa}.nav a[aria-current="location"]::after{display:none}}
 @media(max-width:560px){.category-title{font-size:clamp(29px,8.3vw,46px);letter-spacing:-.06em;line-height:1;transform:none;margin-bottom:30px}.g-logo .work{border-radius:0}}
 @media(prefers-reduced-motion:reduce){.work img,.work:hover img,.lb.open .lb-img.ready{transform:none!important;filter:none!important}.lb-img{will-change:auto}}
+/* A single reachable navigation island for phones and tablets. */
+@media(max-width:1100px){
+ :root{--bar:24px}
+ body{padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+ .bar{inset:auto 0 calc(14px + env(safe-area-inset-bottom,0px));padding:0 12px;background:none}
+ .bar-in{height:76px;max-width:660px;padding:8px 10px;gap:8px;border:1px solid #ffffff29;border-radius:25px;background:#0b0b13ed;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 12px 48px #0008,inset 0 1px #ffffff0d}
+ .bar .logo{width:32px;height:32px;flex:none;z-index:auto;margin:0 4px}
+ .bar .burger{display:none}
+ .bar .nav{position:static;inset:auto;display:flex;flex:1;min-width:0;flex-direction:row;justify-content:space-between;align-items:stretch;gap:3px;padding:0;background:none;backdrop-filter:none;opacity:1;visibility:visible;transition:none}
+ .bar .nav a{display:flex;flex:1;min-width:0;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:58px;padding:6px 2px;margin:0;border-radius:17px;opacity:1;transform:none;color:#a8a5b0;font-size:10px;line-height:1.1;font-weight:600;letter-spacing:0;white-space:nowrap;transition:background .25s,color .25s}
+ .bar .nav a::after{display:none}
+ .bar .nav a[aria-current="location"]{color:#fff;background:#ff003c;box-shadow:0 4px 16px #ff003c24}
+ .bar .nav a:active{background:#731529;color:#fff}
+ .nav-icon{width:21px;height:21px;display:block}
+ main{padding-top:24px}
+ .home{min-height:calc(100svh - 128px - env(safe-area-inset-bottom,0px));padding:40px 8px 64px;scroll-margin-top:24px}
+ .skills{width:min(100%,600px)}
+ .skills li{padding:24px 20px;gap:18px}
+ .portfolio-section{padding-block:42px 20px;scroll-margin-top:24px}
+ .portfolio-section:last-child{padding-bottom:32px}
+ .category-title{font-size:clamp(32px,7.5vw,72px);margin-bottom:28px;transform:none}
+ .gallery{gap:14px}
+ .g-portrait{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .g-square,.g-wide{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .g-logo{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+ .work{-webkit-tap-highlight-color:transparent;touch-action:pan-y}
+ .work:active img{transform:scale(.975)}
+ .lb-close{top:calc(14px + env(safe-area-inset-top,0px));right:16px}
+ .lb-prev,.lb-next{top:auto;margin:0;bottom:calc(22px + env(safe-area-inset-bottom,0px));width:52px;height:52px}
+ .lb-prev{left:calc(50% - 112px)}.lb-next{right:calc(50% - 112px)}
+ .lb-img{max-width:calc(100vw - 28px);max-height:calc(100svh - 175px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))}
+ .lb-count{position:absolute;bottom:calc(39px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);font-size:12px;color:#ccc;font-variant-numeric:tabular-nums;pointer-events:none}
+}
+.nav-icon{display:none}
+@media(max-width:1100px){.bar .nav-icon{display:block}}
+.lb-count{color:#bbb;font-size:12px}
+@media(min-width:1101px){.lb-count{position:absolute;bottom:20px;left:50%;transform:translateX(-50%)}}
+@media(max-width:600px){
+ main{padding-inline:14px}
+ .g-portrait{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .g-square,.g-wide{grid-template-columns:1fr}
+ .gallery{gap:12px}
+ .skills li{font-size:15px;padding:22px 16px;gap:14px}
+ .category-title{font-size:clamp(30px,8vw,46px);letter-spacing:-.055em}
+}
+@media(max-width:360px){.bar .logo{display:none}.bar-in{padding-inline:7px}.bar .nav a{font-size:9px}.skills li{font-size:14px}}
+@media(max-width:1100px) and (orientation:landscape) and (max-height:500px){.home{min-height:320px}.lb-img{max-height:calc(100svh - 55px)}.lb-prev{left:12px}.lb-next{right:12px}.lb-count{bottom:12px}}
